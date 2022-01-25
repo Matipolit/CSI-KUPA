@@ -1,4 +1,4 @@
-package CSI;
+package CSI.Sensor;
 
 public class SensorResponse {
 
@@ -22,5 +22,13 @@ public class SensorResponse {
 
     public String getPressure() {
         return pressure;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "temperature='" + temperature + '\'' +
+                ", humidity='" + humidity + '\'' +
+                ", pressure='" + pressure + '\'';
     }
 }
