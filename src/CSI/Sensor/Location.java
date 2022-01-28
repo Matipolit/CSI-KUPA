@@ -27,6 +27,15 @@ public class Location {
         return measuresPressure;
     }
 
+    public boolean measuresDataFromString(String dataType){
+        switch(dataType){
+            case("temperature") -> {return measuresTemperature;}
+            case("humidity") -> {return measuresHumidity;}
+            case("pressure") -> {return measuresPressure;}
+            default -> {return false;}
+        }
+    }
+
     public String getName() {
         return this.name;
     }

@@ -3,8 +3,10 @@ package CSI.Sensor;
 import KUPA.User;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class Sensor {
@@ -32,7 +34,11 @@ public class Sensor {
         String temperature = "unavailable";
         String humidity = "unavailable";
         String pressure = "unavailable";
-        DecimalFormat df = new DecimalFormat("#.#");
+
+        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.getDefault());
+        otherSymbols.setDecimalSeparator('.');
+
+        DecimalFormat df = new DecimalFormat("#.#", otherSymbols);
         if(location.measuresTemperature()){
             temperature = df.format(20 + r.nextDouble() * (30 - 20));
         }
